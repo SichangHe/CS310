@@ -37,3 +37,7 @@ superkey $K$: subset of row tuple, bijection with row
 - superset of $K$ is also superkey
 
 candidate key = minimal superkey
+
+union compatibility/ type compatibility
+
+data control language (DCL) & transaction control language (TCL): management
