@@ -41,3 +41,11 @@ candidate key = minimal superkey
 union compatibility/ type compatibility
 
 data control language (DCL) & transaction control language (TCL): management
+
+`like`: any substring `%`, any char `_`
+
+for where clause: like, between
+
+union, intersect, except
+
+select x, fn(y) from _ group by x having …
