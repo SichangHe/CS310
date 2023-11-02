@@ -44,8 +44,18 @@ data control language (DCL) & transaction control language (TCL): management
 
 `like`: any substring `%`, any char `_`
 
-for where clause: like, between
+for where clause filter: like, between, some, all
 
-union, intersect, except
+for where clause standalone: exists, unique
+
+union, intersect, except (all)
 
 select x, fn(y) from _ group by x having …
+
+boolean type: true, false, unknown
+
+select _ from _ where x in y;
+
+lateral clause: select _ from x, lateral (/* access outside variables */) …;
+
+with clause: with alias_name as (…) select …;
