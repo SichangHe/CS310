@@ -50,12 +50,27 @@ for where clause standalone: exists, unique
 
 union, intersect, except (all)
 
+```sql
 select x, fn(y) from _ group by x having …
+```
 
 boolean type: true, false, unknown
 
+```sql
 select _ from _ where x in y;
-
-lateral clause: select _ from x, lateral (/* access outside variables */) …;
-
-with clause: with alias_name as (…) select …;
+-- lateral clause:
+select _ from x, lateral (/* access outside variables */) …;
+-- with clause:
+with alias_name as (…) select …;
+delete from _ where _;
+insert into table_name (attributes, …) values (…,), (…,), …
+update table_name set attributes = value where …;
+-- expression with pattern matching
+case
+    when _ then _
+    …
+    else _
+end;
+-- join using
+select _ from relation1 join relation2 using (attr1, …);
+```
