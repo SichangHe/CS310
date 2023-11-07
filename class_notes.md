@@ -74,3 +74,25 @@ end;
 -- join using
 select _ from relation1 join relation2 using (attr1, …);
 ```
+
+domain constraint on single relation: `not null`, `unique`, `check (…)`
+
+referential integrity: `foreign key (attr1) references table_name on delete …`
+
+named constraint: `attr1 type, constraint constr_name check (…)`
+
+- drop named constraint: `alter table table_name drop constraint constr_name;`
+- deferrable constraint: check at end of transaction
+
+assertion
+
+```sql
+create assertion assert_name check (…);
+```
+
+function call
+
+- `coalesce(attr1, default_value_in_place_of_null)`
+- `cast(attr1 as type)`
+- `data_format(value, 'format string')`
+- `if(predicate, value_when_true, value_when_false)` or `decode` in Oracle
