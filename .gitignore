@@ -83,4 +83,4 @@
 **comment.cut
 
 # Specific
-db_eg/
+db_eg/*.sql

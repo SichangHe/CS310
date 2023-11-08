@@ -73,6 +73,9 @@ case
 end;
 -- join using
 select _ from relation1 join relation2 using (attr1, …);
+-- view/ materialized view
+create view view_name as select …;
+create materialized view view_name as select …;
 ```
 
 domain constraint on single relation: `not null`, `unique`, `check (…)`
