@@ -98,4 +98,18 @@ function call
 - `coalesce(attr1, default_value_in_place_of_null)`
 - `cast(attr1 as type)`
 - `data_format(value, 'format string')`
-- `if(predicate, value_when_true, value_when_false)` or `decode` in Oracle
+    - `if(predicate, value_when_true, value_when_false)` or `decode` in Oracle
+
+user-defined type (UDT): distinct type/ structured data type
+
+```sql
+create type type_name as …;
+create domain domain_name as …;
+```
+
+create table extension
+
+```sql
+create table table2 like table1;
+create table table1 as (select …) with data;
+```
