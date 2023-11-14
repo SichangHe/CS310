@@ -162,3 +162,24 @@ for each_row as table_value1 do
     -- …
 end for;
 ```
+
+trigger:
+
+```sql
+create trigger trigger_name after insert on table_name -- or `before`, `delete`
+referencing new row as row_name for each row when ( -- or `old row`.
+-- or without renaming `new` or `old`.
+    -- …
+)
+begin -- compound statement
+    rollback
+end;
+```
+
+error handling:
+
+```sql
+declare continue handle for sqlstate 'err_no' begin
+    -- …
+end;
+```
