@@ -65,12 +65,6 @@ with alias_name as (…) select …;
 delete from _ where _;
 insert into table_name (attributes, …) values (…,), (…,), …
 update table_name set attributes = value where …;
--- expression with pattern matching
-case
-    when _ then _
-    …
-    else _
-end;
 -- join using
 select _ from relation1 join relation2 using (attr1, …);
 -- view/ materialized view
@@ -112,4 +106,59 @@ create table extension
 ```sql
 create table table2 like table1;
 create table table1 as (select …) with data;
+```
+
+stored function/ stored procedure:
+
+```sql
+delimiter $$
+create function fn_name(arg1 type1, …) returns type_out begin
+    -- declare local variable, set to NULL by default
+    declare local_var var_type default default_val;
+    -- mutate local variable
+    set local_var = …;
+    select _ into local_var from …;
+    return …;
+end $$
+-- `type_out` can be a `table (…)`—table function
+
+create procedure proc_name(
+    in arg_input type1, out arg_output type2, inout arg_mutate type3, …
+) begin
+    -- …
+end $$
+-- no returning for procedure
+
+delimiter ;
+
+-- call procedure
+call proc_name(args…, @outside_var);
+```
+
+stored function: deterministic/ non-deterministic (default)
+
+procedural SQL:
+
+```sql
+-- expression with pattern matching
+case -- optionally with value here
+    when _ then _
+    …
+    else _
+end;
+
+-- loop
+label1: loop
+    iterate; -- continue
+    leave; -- break
+end loop;
+while predicate1 do
+    -- …
+end while;
+repeat
+    -- …
+until predicate1 end repeat;
+for each_row as table_value1 do
+    -- …
+end for;
 ```
