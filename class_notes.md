@@ -174,12 +174,27 @@ referencing new row as row_name for each row when ( -- or `old row`.
 begin -- compound statement
     rollback
 end;
+
+-- multiple trigger
+create trigger trigger_name before update on table_name
+for each row follows another_trigger_name begin
+    -- …
+end, $$
 ```
 
 error handling:
 
 ```sql
-declare continue handle for sqlstate 'err_no' begin
+declare continue handle for sqlstate 'err_no' begin -- or for `not found`
     -- …
-end;
+end; -- or `set _ = …`
+```
+
+cursor:
+
+```sql
+declare cur_name for select _ from _;
+open cur_name;
+fetch cur_name into var1, …;
+close cur_name;
 ```
