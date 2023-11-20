@@ -198,3 +198,12 @@ open cur_name;
 fetch cur_name into var1, …;
 close cur_name;
 ```
+
+entity-relationship model (E-R model): entity set, relationship set, attribute
+
+- multi-valued attribute, composite attribute, derived attribute
+- mapping cardinality, cardinality constraint (directed/undirected link)
+- total participation (double line)/ partial participation
+- weak entity set
+    - identifying entity set primary key → discriminator attribute
+    - descriptive attribute

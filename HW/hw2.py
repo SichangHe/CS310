@@ -142,7 +142,7 @@ def list_courses_offered(cur: sqlite3.Cursor):
     result = cur.execute(
         """select course.course_id
 from department join class using (department_id) join course using (course_id)
-where student_quota>30
+where student_quota>=30
 group by course.course_id
 having count(department.department_id)>=2
 """
