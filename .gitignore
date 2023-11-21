@@ -84,3 +84,4 @@
 
 # Specific
 db_eg/*.sql
+db_eg/sakila-db/
