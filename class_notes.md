@@ -207,3 +207,14 @@ entity-relationship model (E-R model): entity set, relationship set, attribute
 - weak entity set
     - identifying entity set primary key → discriminator attribute
     - descriptive attribute
+
+lossy decomposition: $r\subset\Pi_{R_1}(r)\bowtie\Pi_{R_2}(r)$ (lossless: $=$)
+
+functional dependency (FD) $X → Y$: can uniquely identify $Y$ by $X$
+
+- trivial FD: $Y\subseteq X$
+- $R_1\cap R_2 → R_1 ⇒$ lossless decomposition (or swap 1&2)
+
+Boyce-Codd Normal Form (BCNF):
+$\alpha → \beta,\alpha,\beta\subseteq R ⇒ \beta\subseteq\alpha$ or
+$\alpha$ superkey
