@@ -218,3 +218,31 @@ functional dependency (FD) $X → Y$: can uniquely identify $Y$ by $X$
 Boyce-Codd Normal Form (BCNF):
 $\alpha → \beta,\alpha,\beta\subseteq R ⇒ \beta\subseteq\alpha$ or
 $\alpha$ superkey
+
+mean time to failure MTTF
+
+RAID: data striping vs mirror
+
+fixed-length record: deletion: free list for deletion
+
+variable-length record: offset + length, null bitmap
+
+heap: free-space map (first/second-level)
+
+sequential file: linked list of sorted search key
+
+multi-table clustering file organization:
+faster some join & slower some other, cluster key
+
+table partitioning
+
+buffer manager:
+buffer replacement strategy (LRU/MRU), pin/unpin, shared/exclusive lock
+
+column-oriented storage: less IO, better caching & compression
+
+dense index: index for each search-key value
+
+- dense clustering index: group by cluster key
+
+sparse index: index for some search-key value
