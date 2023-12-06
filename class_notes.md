@@ -246,3 +246,15 @@ dense index: index for each search-key value
 - dense clustering index: group by cluster key
 
 sparse index: index for some search-key value
+
+deadlock prevention:
+
+- wait-die scheme, non-preemptive:
+    older transaction wait for lock, younger transaction die
+- wound-die scheme, preemptive:
+    older transaction wound younger transaction when waiting for lock
+- timeout-based scheme: hard to determine timeout, starvation
+- wait-for graph: cycle → deadlock
+
+recovery system:
+- log-based recovery: redo/undo, immediate/deferred DB modification
